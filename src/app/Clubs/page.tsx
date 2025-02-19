@@ -3,7 +3,6 @@ import clubpic from '../assets/saptak.png'
 import instalogo from '../assets/instagram-1-svgrepo-com.svg'
 import youtubelogo from '../assets/youtube-color-svgrepo-com.svg'
 import linkedinlogo from '../assets/linkedin-svgrepo-com.svg'
-import sidearrow from '../assets/icons8-arrow-forward-right-3d-fluency-32.png'
 export default function Clubpage(){
   return (
     <>
@@ -34,7 +33,7 @@ export default function Clubpage(){
     alt="club logo"
     width={200}/>
   </div>
-  <div className="text-xl w-96 m-2 p-4 font-semibold text-center font-serif">"A club dedicated to music and performing arts."</div>
+  <div className="text-xl w-96 m-2 p-4 font-semibold text-center font-serif">A club dedicated to music and performing arts.</div>
   <div
   className="flex justify-center ">
     <div className="w-11/12 grid grid-cols-1 md:grid-cols-3 md:gap-8 gap-4 p-2">

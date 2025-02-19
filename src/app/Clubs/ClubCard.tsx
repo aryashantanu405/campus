@@ -1,15 +1,13 @@
 import Image, {StaticImageData} from 'next/image'
-import pic from '../assets/desco.png'
 
 interface ClubCardProps{
     name:string;
     description:string;
     imageUrl:StaticImageData;
-    width:number;
-    height:number;
+    
 }
 
-const ClubCard:React.FC<ClubCardProps> =({name,description,imageUrl,width,height})=>{
+const ClubCard:React.FC<ClubCardProps> =({name,description,imageUrl})=>{
   return(
 <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
     <a href="#">

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { currentUser } from "@clerk/nextjs/server";
 import "./Home.css";
 import mypic from "./assets/2.png";
 import natvansh from "./assets/natvansh.png";
@@ -14,12 +13,7 @@ import expresso from "./assets/expresso.png";
 import ecell from "./assets/ecell.png";
 import ClubCard from "./Clubs/ClubCard";
 export default function HomePage() {
-  interface Club {
-    name: string;
-    description: string;
-    imageUrl: string;
-  }
-  const clubs = [
+  const clubs= [
     {
       name: "Natvansh",
       description: "A cultural club promoting traditions and heritage.",
@@ -103,8 +97,8 @@ export default function HomePage() {
               UNIFY
             </h1>
             <h4 className="max-w-2xl mb-6 text-gray-500 lg:mb-8 md:text-lg lg:text-2xl font-semibold dark:text-gray-400">
-              "Unify: Your Ultimate Hub for Campus Life – Stay Informed, Stay
-              Connected!"
+              Unify: Your Ultimate Hub for Campus Life – Stay Informed, Stay
+              Connected!
             </h4>
             <a
               href="#"
