@@ -1,101 +1,142 @@
 import Image from "next/image";
-
-export default function Home() {
+import { currentUser } from "@clerk/nextjs/server";
+import "./Home.css";
+import mypic from "./assets/2.png";
+import natvansh from "./assets/natvansh.png";
+import vista from "./assets/vista.png";
+import hackslash from "./assets/hackslash.png";
+import saptak from "./assets/saptak.png";
+import ieee from "./assets/ieee.png";
+import desco from "./assets/desco.png";
+import thinkindia from "./assets/thinkindia.png";
+import gyb from "./assets/gyb.png";
+import expresso from "./assets/expresso.png";
+import ecell from "./assets/ecell.png";
+import ClubCard from "./Clubs/ClubCard";
+export default function HomePage() {
+  interface Club {
+    name: string;
+    description: string;
+    imageUrl: string;
+  }
+  const clubs = [
+    {
+      name: "Natvansh",
+      description: "A cultural club promoting traditions and heritage.",
+      imageUrl: natvansh,
+      width: 300,
+      height: 200,
+    },
+    {
+      name: "Vista",
+      description: "A club for creative thinkers and designers.",
+      imageUrl: vista,
+      width: 400,
+      height: 250,
+    },
+    {
+      name: "Hackslash",
+      description: "A community for coding and open-source enthusiasts, developing projects and grinding DSA",
+      imageUrl: hackslash,
+      width: 350,
+      height: 220,
+    },
+    {
+      name: "Saptak",
+      description: "A club dedicated to music and performing arts.",
+      imageUrl: saptak,
+      width: 320,
+      height: 180,
+    },
+    {
+      name: "IEEE",
+      description: "Advancing technology for the benefit of humanity.",
+      imageUrl: ieee,
+      width: 300,
+      height: 200,
+    },
+    {
+      name: "Desco",
+      description: "A club for design and multimedia enthusiasts.",
+      imageUrl: desco,
+      width: 360,
+      height: 240,
+    },
+    {
+      name: "Think India",
+      description: "A club focusing on national and social awareness.",
+      imageUrl: thinkindia,
+      width: 300,
+      height: 80,
+    },
+    {
+      name: "GYB",
+      description: "Grow Your Business - Entrepreneurship and leadership.",
+      imageUrl: gyb,
+      width: 400,
+      height: 250,
+    },
+    {
+      name: "Expresso",
+      description: "A club for writers, poets, and public speakers.",
+      imageUrl: expresso,
+      width: 350,
+      height: 200,
+    },
+    {
+      name: "E-Cell",
+      description: "Entrepreneurship and startup incubation club.",
+      imageUrl: ecell,
+      width: 380,
+      height: 220,
+    },
+  ];
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <>
+      <section className="bg-home_hero_bg dark:bg-gray-900">
+        <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+          <div
+            className=" text-center
+        md:text-left mr-auto place-self-center lg:col-span-7"
           >
+            <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-6xl xl:text-9xl dark:text-white">
+              UNIFY
+            </h1>
+            <h4 className="max-w-2xl mb-6 text-gray-500 lg:mb-8 md:text-lg lg:text-2xl font-semibold dark:text-gray-400">
+              "Unify: Your Ultimate Hub for Campus Life – Stay Informed, Stay
+              Connected!"
+            </h4>
+            <a
+              href="#"
+              className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-black hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
+            >
+              Get started
+            </a>
+            <a
+              href="#"
+              className="inline-flex items-center justify-center px-5 py-3 ml-10 text-base font-medium text-center text-black border border-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+            >
+              How it works
+            </a>
+          </div>
+          <div className="hidden lg:mt-0 lg:col-span-5 lg:flex ">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src={mypic}
+              width={500}
+              height={500}
+              alt="unify logo"
+              className="rounded-lg custom-shadow"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+      <section className="bg-white dark:bg-gray-900 py-8 p-8">
+        <div className="grid grid-col-2 gap-6 md:grid-cols-2 lg:grid-cols-5 max-w-screen-2xl mx-auto px-4">
+          {clubs.map((club, index) => (
+            <ClubCard key={index} {...club} />
+          ))}
+        </div>
+      </section>
+    </>
   );
 }
