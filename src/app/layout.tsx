@@ -4,12 +4,14 @@ import {
 import './globals.css'
 import Header from './Header'
 import Footer from './Footer'
+import { AppContext } from '../Context/Appcontext1'
 export default function RootLayout({
   children,
 }:{
   children:React.ReactNode
 }){
   return(
+    <AppContext>
     <ClerkProvider>
     <html
 lang='en'>
@@ -20,5 +22,6 @@ lang='en'>
   </body>
 </html>
 </ClerkProvider>
+</AppContext>
   )
 }

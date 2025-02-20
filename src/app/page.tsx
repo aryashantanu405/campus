@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import "./Home.css";
 import mypic from "./assets/2.png";
@@ -12,7 +13,23 @@ import gyb from "./assets/gyb.png";
 import expresso from "./assets/expresso.png";
 import ecell from "./assets/ecell.png";
 import ClubCard from "./Clubs/ClubCard";
+// import {connect} from "./lib/mongoose";
+import { useContext,useEffect } from "react";
+import { UserContext } from "../Context/usercontext";
+import { useUser } from "@clerk/nextjs";
+// connect();
 export default function HomePage() {
+  const { user, setuser } = useContext(UserContext);
+  const { user: clerkUser } = useUser(); // ✅ Extract only `user`
+
+  useEffect(() => {
+    if (clerkUser && clerkUser !== user) {
+      setuser(clerkUser);
+    }
+  }, [clerkUser]); 
+  console.log(user.fullName);
+
+
   const clubs= [
     {
       name: "Natvansh",

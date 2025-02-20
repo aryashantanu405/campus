@@ -1,13 +1,16 @@
 "use client";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Image from "next/image";
 import logo from "./assets/2.png";
 import menulogo from "./assets/icons8-menu.svg";
 import usericon from "./assets/user_accounts_15362.png";
 import { UserButton, useUser, SignUpButton } from "@clerk/nextjs";
 import Link from "next/link";
+import { UserContext } from "@/Context/usercontext";
 
 export default function Header() {
+  const {user}=useContext(UserContext);
+  console.log(user);
   const { isSignedIn } = useUser();
   const [isOpen, setIsOpen] = useState(false); // Track menu state
 
