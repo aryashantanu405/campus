@@ -13,10 +13,10 @@ import gyb from "./assets/gyb.png";
 import expresso from "./assets/expresso.png";
 import ecell from "./assets/ecell.png";
 import ClubCard from "./Clubs/ClubCard";
-// import {connect} from "./lib/mongoose";
-import { useContext,useEffect } from "react";
-import { UserContext } from "../Context/usercontext";
-import { useUser } from "@clerk/nextjs";
+ // import {connect} from "./lib/mongoose";
+// import { useContext,useEffect } from "react";
+// import { UserContext } from "../Context/usercontext";
+// import { useUser } from "@clerk/nextjs";
 // connect();
 export default function HomePage() {
   // const { user, setuser } = useContext(UserContext);
