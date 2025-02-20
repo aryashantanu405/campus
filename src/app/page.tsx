@@ -19,15 +19,15 @@ import { UserContext } from "../Context/usercontext";
 import { useUser } from "@clerk/nextjs";
 // connect();
 export default function HomePage() {
-  const { user, setuser } = useContext(UserContext);
-  const { user: clerkUser } = useUser(); // ✅ Extract only `user`
+  // const { user, setuser } = useContext(UserContext);
+  // const { user: clerkUser } = useUser(); // ✅ Extract only `user`
 
-  useEffect(() => {
-    if (clerkUser && clerkUser !== user) {
-      setuser(clerkUser);
-    }
-  }, [clerkUser]); 
-  console.log(user.fullName);
+  // useEffect(() => {
+  //   if (clerkUser && clerkUser !== user) {
+  //     setuser(clerkUser);
+  //   }
+  // }, [clerkUser]); 
+  // console.log(user.fullName);
 
 
   const clubs= [
