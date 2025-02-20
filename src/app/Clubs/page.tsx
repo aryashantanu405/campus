@@ -12,20 +12,20 @@ export default function Clubpage(){
     <>
   <div
         className={` max-h-96 fixed top-20 left-1 h-full bg-orange-200 shadow-lg transition-all duration-700 rounded-md ${
-          isOpen ? "w-2/12" : "w-0"
+          isOpen ? "w-3/12" : "w-0"
         } overflow-hidden`}
       >
         <div className="flex flex-col items-center py-4 h-full">
           
           {isOpen && (
             <>
-            <ul className="mt-10 space-y-4 text-gray-700 w-full text-center">
+            <ul className="mt-10 space-y-4 text-black font-serif w-full text-center">
               <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">Home</li>
               <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">Clubs</li>
               <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">Events</li>
             </ul>
-            <div className="flex justify-between gap-6 items-center mt-10">
-              <Image src={instalogo} alt=""  width={50}></Image>
+            <div className="flex-col md:flex-row justify-between gap-6 items-center md:mt-10 mt-5">
+              <Image  src={instalogo} alt=""  width={50}></Image>
               <Image src={linkedinlogo} alt="" width={50}></Image>
               <Image src={youtubelogo} alt="" width={50}></Image>
             </div>

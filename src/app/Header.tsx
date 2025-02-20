@@ -25,7 +25,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation (Ensuring Vertical Center Alignment) */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-8 ">
           <ul className="flex items-center space-x-6 font-semibold text-white">
             <li><Link href="/" className="py-2 px-3 hover:text-red-700">Home</Link></li>
             <li><Link href="#" className="py-2 px-3 hover:text-red-700">Explore</Link></li>
